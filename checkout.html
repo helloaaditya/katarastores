@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +89,6 @@
             </div>
         </section>
     </div>
-
     <script>
         document.getElementById('checkout-form').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -120,7 +118,6 @@
                 Phone: phone, 
                 Payment: payment
             };
-
             // Make a POST request to the Sheet's API endpoint
             fetch('https://sheet.best/api/sheets/128acba9-f615-4a94-81f2-874739676452', {
                 method: 'POST',
@@ -138,7 +135,6 @@
                     alert('An error occurred while completing the purchase. Please try again later.');
                 });
         });
-
         // clear the from on refresh 
         window.onload = function () {
             document.getElementById("checkout-form").reset();
