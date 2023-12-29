@@ -171,9 +171,14 @@ header {
         letter-spacing: 2px;
     }
 
+    .menu {
+        text-align: center;
+    }
+    
     .menu a {
         color: #000000;
-        margin: 22px;
+        font-size: 14px;
+        margin:8px;
         text-decoration: none;
     }
 

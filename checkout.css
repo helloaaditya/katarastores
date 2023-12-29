@@ -218,7 +218,7 @@ header {
     .order-summary,
     .billing-details {
         margin-right: 0;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         margin-bottom: 20px;
         width: 100%;
     }
@@ -251,9 +251,14 @@ header {
         letter-spacing: 2px;
     }
 
+    .menu {
+        text-align: center;
+    }
+    
     .menu a {
         color: #000000;
-        margin:15px;
+        font-size: 14px;
+        margin:8px;
         text-decoration: none;
     }
 
