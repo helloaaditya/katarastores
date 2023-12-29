@@ -58,6 +58,7 @@ header {
 .menu a:hover {
     color: #ed8208;
 }
+
 /* Checkout container styles */
 .checkout-container {
     display: flex;
@@ -114,7 +115,7 @@ header {
 .payment-methods h2 {
     color: #333;
     text-align: center;
-    font-weight: bold;  
+    font-weight: bold;
     font-size: 22px;
 }
 
@@ -142,13 +143,13 @@ header {
     display: none;
 }
 
-.payment-method input[type="radio"] + label {
+.payment-method input[type="radio"]+label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
 }
 
-.payment-method input[type="radio"] + label:before {
+.payment-method input[type="radio"]+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -156,15 +157,18 @@ header {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    border: 2px solid #5d5f5d; /* Set the color you want */
+    border: 2px solid #5d5f5d;
+    /* Set the color you want */
     border-radius: 50%;
     box-sizing: border-box;
 }
-.payment-method input[type="radio"]:checked + label:before {
-    border: 2px solid #4CAF50; /* Set the color you want */
+
+.payment-method input[type="radio"]:checked+label:before {
+    border: 2px solid #4CAF50;
+    /* Set the color you want */
 }
 
-.payment-method input[type="radio"] + label:after {
+.payment-method input[type="radio"]+label:after {
     content: '';
     position: absolute;
     left: 5px;
@@ -173,11 +177,13 @@ header {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #4CAF50; /* Set the color you want */
+    background-color: #4CAF50;
+    /* Set the color you want */
     opacity: 0;
     transition: opacity 0.2s;
 }
-.payment-method input[type="radio"]:checked + label:after {
+
+.payment-method input[type="radio"]:checked+label:after {
     opacity: 1;
 }
 
@@ -185,7 +191,7 @@ header {
     margin-left: 10px;
 }
 
-.payment-methods button{
+.payment-methods button {
     margin-top: 1rem;
     padding: 10px;
     border-radius: 5px;
@@ -198,7 +204,7 @@ header {
 
 }
 
-.Notes{
+.Notes {
     margin-top: 2rem;
     margin-left: 1rem;
 }
@@ -212,9 +218,47 @@ header {
     .order-summary,
     .billing-details {
         margin-right: 0;
+        margin-top: 1rem;
         margin-bottom: 20px;
         width: 100%;
     }
+
+    header {
+        background-color: #ffffff;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 5px solid #929191;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .logo h2 {
+        width: 100%;
+        margin-left: 0rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-family: 'Caveat', cursive;
+        font-size: 2rem;
+        background: linear-gradient(to right, #0011ff, #ef3203);
+        -webkit-background-clip: text;
+        color: transparent;
+        letter-spacing: 2px;
+    }
+
+    .menu a {
+        color: #000000;
+        margin:15px;
+        text-decoration: none;
+    }
+
+    .checkout-container hr{
+        margin-top: 0.5rem;
+    }
+
 }
-
-
