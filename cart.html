@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h2 class="logo-text">Katara<span>Stores</span></h2>
+            </div>
+            <div class="menu">
+                <a href="index.html">&#127968; Home</a>
+                <a href="cart.html">&#128722; Cart</a>
+                <a href="#contact">&#x260E; Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="cart-content">
+        <h4>Cart Items</h4>
+        <hr>
+        <div id="cart-items" class="cart-items-container"></div>
+        <div id="total-price"></div>
+    </div>
+
+    <button id="buynow" onclick="buynow()">Buy Now</button>
+
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

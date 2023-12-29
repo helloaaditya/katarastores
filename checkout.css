@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* button boader black sawdo  */
+    border-bottom: 5px solid #929191;
+}
+
+
+.navbar {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo h2 {
+    width: 100%;
+    margin-left: 2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    background: linear-gradient(to right, #0011ff, #ef3203);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+}
+
+
+.menu a {
+    color: #000000;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 55px;
+}
+
+.menu a:hover {
+    color: #ed8208;
+}
+/* Checkout container styles */
+.checkout-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 6rem;
+}
+
+/* Order summary and billing details styles */
+.order-summary,
+.billing-details {
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cart-items-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Customer details styles */
+.customer-details {
+    width: 100%;
+}
+
+.customer-details label,
+.customer-details textarea,
+.customer-details input {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.customer-details textarea {
+    height: 100px;
+}
+
+/* Payment methods styles */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.payment-methods h2 {
+    color: #333;
+    text-align: center;
+    font-weight: bold;  
+    font-size: 22px;
+}
+
+.payment-methods-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 10px;
+}
+
+.payment-method {
+    flex-direction: row;
+    border: solid 1px gray;
+    text-align: left;
+    padding: 10px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* Style the radio buttons */
+.payment-method input[type="radio"] {
+    display: none;
+}
+
+.payment-method input[type="radio"] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.payment-method input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #5d5f5d; /* Set the color you want */
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.payment-method input[type="radio"]:checked + label:before {
+    border: 2px solid #4CAF50; /* Set the color you want */
+}
+
+.payment-method input[type="radio"] + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4CAF50; /* Set the color you want */
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.payment-method input[type="radio"]:checked + label:after {
+    opacity: 1;
+}
+
+.payment-method label {
+    margin-left: 10px;
+}
+
+.payment-methods button{
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+.Notes{
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .order-summary,
+    .billing-details {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
+
+

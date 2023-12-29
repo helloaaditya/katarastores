@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* button boader black sawdo  */
+    border-bottom: 5px solid #929191;
+}
+
+
+.navbar {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo h2 {
+    width: 100%;
+    margin-left: 2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    background: linear-gradient(to right, #0011ff, #ef3203);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+}
+
+
+.menu a {
+    color: #000000;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 55px;
+}
+
+.menu a:hover {
+    color: #ed8208;
+}
+
+
+.cart-content h4{
+    margin-top: 4.5rem;
+    padding: 2rem 0;
+    font-size: 24px;
+    text-align: center;
+    color: rgb(9, 9, 9);
+}
+
+/* Cart Content Styles */
+.cart-content {
+    max-width:80%;
+    margin: 20px auto;
+}
+
+.cart-content h4 {
+    text-align: center;
+}
+
+.cart-items-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cart-item {
+    border: 1px solid #c3c3c3;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.cart-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+#buynow {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background-color: #e44d26;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#total-price{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #000000;
+    background: #48e40a;
+    border: solid 1px rgb(0, 21, 255);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.delete-button {
+    background-color: #353434;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.delete-button:hover {
+    background-color: #ff6347;
+}
+
