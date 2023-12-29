@@ -571,26 +571,6 @@ footer {
     margin-bottom: 5px;
 }
 
-.contact-form {
-    max-width: 400px;
-}
-
-.text-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.btn {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
 .btn:hover {
     background-color: #555;
@@ -601,4 +581,110 @@ footer {
     padding: 10px 0;
     background-color: #333;
     color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+
+    header{
+        background-color: #ffffff;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 5px solid #929191;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .logo h2 {
+        width: 100%;
+        margin-left: 0rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-family: 'Caveat', cursive;
+        font-size: 2rem;
+        background: linear-gradient(to right, #0011ff, #ef3203);
+        -webkit-background-clip: text;
+        color: transparent;
+        letter-spacing: 2px;
+    }
+
+    .menu a {
+        color: #000000;
+        margin: 0px 15px 0 30px;
+        text-decoration: none;
+    }
+
+
+    .slider {
+        margin-top: 8rem;
+        height: 550px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+        object-fit: cover;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .navigation-manual{
+        position: absolute;
+        bottom: 20px;
+        top: 37%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    .products{
+        display: block;
+        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
+        padding: 0 10px;
+        margin-top: -20rem;
+    }
+
+    .product{
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .fproduct{
+        width: 100%;
+        margin: 20px;
+        padding: 20px;
+        display: block;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .fproduct-info{
+        margin-top: 2rem;
+        margin-left: 0rem;
+    }
+    .footer-content{
+        display: block;
+    }
+
 }
