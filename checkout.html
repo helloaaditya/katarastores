@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>katarastores | Checkout</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap">
     <link rel="stylesheet" href="checkout.css">
     <link rel="stylesheet" href="style.css">
@@ -32,8 +32,6 @@
             <div id="cart-items" class="cart-items-container"></div>
             <div id="total-price"></div>
         </section>
-
-
 
         <section class="billing-details">
             <h2>Billing Details</h2>
@@ -64,12 +62,6 @@
                     <h2>Select Payment Methods</h2>
                     <hr>
                     <div class="payment-methods-container">
-                        <!-- <div class="payment-method">
-                            <input type="button" id="paytm" name="payment-method" required>
-                            <label for="paytm">Paytm / PhonePe
-                                <button type="submit">Pay Here</button>
-                            </label>
-                        </div> -->
                         <div class="payment-method">
                             <input type="radio" id="cash-on-delivery" name="payment-method" value="cash-on-delivery" required>
                             <label for="cash-on-delivery">Cash on Delivery</label>
@@ -152,7 +144,6 @@
             document.getElementById("checkout-form").reset();
         }
     </script>
-
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
     <script src="cart.js"></script>

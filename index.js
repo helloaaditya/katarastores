@@ -54,16 +54,9 @@ function decrementQuantity() {
 }
 
 function updateQuantityAndTotal() {
-    // Update quantity display
     document.getElementById('fquantity').innerText = quantity;
-
-    // Get product price as a string
     const priceString = document.querySelector('.fproduct-price h3').innerText;
-
-    // Extract numerical value from the price string
     const unitPrice = parseFloat(priceString.replace('$', ''));
-
-    // Calculate and update total amount
     const totalAmount = quantity * unitPrice;
     document.getElementById('ftotal-amount').innerText = `$${totalAmount.toFixed(2)}`;
 }
@@ -93,13 +86,13 @@ function addToCart() {
             totalAmount: totalAmount,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
-        .then(function(docRef) {
-            alert(`Successfully added to the Cart.`);
-        })
-        .catch((error) => {
-            console.error('Error adding product to the Cart:', error);
-            alert('Error adding product to the Cart. Please try again later.');
-        });
+            .then(function (docRef) {
+                alert(`Successfully added to the Cart.`);
+            })
+            .catch((error) => {
+                console.error('Error adding product to the Cart:', error);
+                alert('Error adding product to the Cart. Please try again later.');
+            });
     } catch (error) {
         console.error('An unexpected error occurred:', error);
         alert('An unexpected error occurred. Please try again later.');

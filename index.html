@@ -4,12 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>KatraStore | Home</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap">
-
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
+    <meta name="keywords"
+        content="KataraStores, Katara, Stores, Katara Stores, KataraStores.com, KataraStores.in, KataraStores.co.in,KataraStores.co, KataraStores.co.uk, KataraStores.co.us, KataraStores.co.au, KataraStores.co.ca, KataraStores.co.nz, KataraStores.co.za, KataraStores.co.jp, KataraStores.co.kr, KataraStores.co.fr, KataraStores.co.de, KataraStores.co.it, KataraStores.co.es, KataraStores.co.nl, KataraStores.co.se, KataraStores.co.pl, KataraStores">
+    <meta name="description"
+        content="KataraStores is an online shopping platform that offers a wide range of products from electronics, books, clothes, accessories to anything you can think of. We offer a wide range of products from electronics, books, clothes, accessories to anything you can think of.">
+    <meta name="author" content="KataraStores">
+    <meta property="og:image" content="img/KataraStores.png">
+    <meta property="og:title" content="KataraStores">
+    <meta property="og:description"
+        content="KataraStores is an online shopping platform that offers a wide range of products from electronics, books, clothes, accessories to anything you can think of. We offer a wide range of products from electronics, books, clothes, accessories to anything you can think of.">
+    <meta property="og:url" content="https://katarastores.in">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KataraStores">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="3 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="theme-color" content="#3374F3">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="KataraStores">
+    <meta property="og:description"
+        content="KataraStores is an online shopping platform that offers a wide range of products from electronics, books, clothes, accessories to anything you can think of. We offer a wide range of products from electronics, books, clothes, accessories to anything you can think of.">
+    <!-- <meta property="og:image" content="https://hellotushar.com/images/social_media_thumbnail.png"> -->
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="854">
+    <meta property="og:url" content="https://katarastores.in">
+
+
 
 </head>
 
@@ -17,7 +48,6 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <!-- <img src="img/logo.png" alt="logo"> -->
                 <h2 class="logo-text">Katara<span>Stores</span></h2>
             </div>
             <div class="menu">
@@ -28,7 +58,6 @@
         </div>
     </header>
 
-    <!-- three image slider -->
     <div class="slider">
         <div class="slides">
             <input type="radio" name="radio-btn" id="radio1">
@@ -51,7 +80,6 @@
         <label for="radio3" class="manual-btn"></label>
     </div>
 
-    <!-- products section  -->
     <section class="products">
         <div class="container">
             <div class="section-heading">
@@ -210,7 +238,8 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Enter your email" required>
                 <label for="message">Message</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"
+                    required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -239,16 +268,16 @@
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
-            .then(result => {
-                console.log('Data sent successfully:', result);
-                // You can add further actions here if needed
-                alert('Message sent successfully!');
-            })
-            .catch(error => {
-                console.error('Error sending data:', error);
-                alert('An error occurred while sending the message. Please try again later.');
-            });
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Data sent successfully:', result);
+                    // You can add further actions here if needed
+                    alert('Message sent successfully!');
+                })
+                .catch(error => {
+                    console.error('Error sending data:', error);
+                    alert('An error occurred while sending the message. Please try again later.');
+                });
         });
     </script>
 
@@ -323,11 +352,7 @@
             appId: "1:608050390043:web:4c789c9c77cbf66ad644be",
             measurementId: "G-WPGL7WB382"
         };
-
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
-        // Initialize Firestore
         var db = firebase.firestore();
     </script>
 </body>

@@ -76,7 +76,7 @@ function deleteItem(cartItemId) {
 fetchCartItems();
 
 
-function buynow(){
+function buynow() {
     // redirect to the checkout.html page
     window.location.href = "checkout.html";
 }

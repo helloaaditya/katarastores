@@ -585,7 +585,7 @@ footer {
 
 @media only screen and (max-width: 768px) {
 
-    header{
+    header {
         background-color: #ffffff;
         padding: 10px;
         position: fixed;
@@ -615,11 +615,11 @@ footer {
     .menu {
         text-align: center;
     }
-    
+
     .menu a {
         color: #000000;
         font-size: 14px;
-        margin:8px;
+        margin: 8px;
         text-decoration: none;
     }
 
@@ -646,7 +646,7 @@ footer {
         overflow: hidden;
     }
 
-    .navigation-manual{
+    .navigation-manual {
         position: absolute;
         bottom: 20px;
         top: 37%;
@@ -655,7 +655,7 @@ footer {
         display: flex;
     }
 
-    .products{
+    .products {
         display: block;
         grid-template-columns: repeat(2, 1fr);
         flex-wrap: wrap;
@@ -663,7 +663,7 @@ footer {
         margin-top: -20rem;
     }
 
-    .product{
+    .product {
         width: 100%;
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -671,7 +671,7 @@ footer {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .fproduct{
+    .fproduct {
         width: 100%;
         margin: 20px;
         padding: 20px;
@@ -683,11 +683,12 @@ footer {
         transition: transform 0.3s ease-in-out;
     }
 
-    .fproduct-info{
+    .fproduct-info {
         margin-top: 2rem;
         margin-left: 0rem;
     }
-    .footer-content{
+
+    .footer-content {
         display: block;
     }
 

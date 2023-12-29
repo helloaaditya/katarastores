@@ -254,15 +254,15 @@ header {
     .menu {
         text-align: center;
     }
-    
+
     .menu a {
         color: #000000;
         font-size: 14px;
-        margin:8px;
+        margin: 8px;
         text-decoration: none;
     }
 
-    .checkout-container hr{
+    .checkout-container hr {
         margin-top: 0.5rem;
     }
 

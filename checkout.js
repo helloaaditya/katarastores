@@ -85,6 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Store billing details in Firestore
         storeBillingDetails(name, email, address, city, state, country, zip, phone);
 
-        alert('Purchase completed!'); 
+        alert('Purchase completed!');
     });
 });
