@@ -615,7 +615,9 @@ footer {
 
     .menu a {
         color: #000000;
-        margin: 0px 15px 0 30px;
+        justify-content: center;
+        font-size: 18px;
+        margin: 22px;
         text-decoration: none;
     }
 
