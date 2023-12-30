@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap">
+    <!-- Include Firebase scripts for version 8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h2 class="logo-text">Katara<span>Stores</span></h2>
+            </div>
+            <div class="menu">
+                <a href="index.html">&#127968; Home</a>
+                <a href="cart.html">&#128722; Cart</a>
+                <a href="contact.html">&#x260E; Contact</a>
+                <button id="logoutBtn" style="display: none;" onclick="logout()">Logout</button>
+                <a href="index.html" id="user-info"></a>
+                <a id="loginLink" href="login.html">Login</a>
+            </div>
+        </div>
+    </header>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" class="custom-alert-button" onclick="login()">Login</button>
+        <hr><br>
+        <button type="button" class="custom-alert-button" onclick="forgotPassword()">Forgot Password</button>
+        <button type="button" onclick="register()">Register</button>
+
+
+        <button class="google-btn" type="button" onclick="loginWithGoogle()">Login with Google</button>
+    </form>
+    <script>
+        function openCustomAlert() {
+            document.getElementById("customAlert").style.display = "flex";
+        }
+
+        function closeCustomAlert() {
+            document.getElementById("customAlert").style.display = "none";
+        }
+    </script>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

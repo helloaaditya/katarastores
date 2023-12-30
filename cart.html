@@ -19,7 +19,10 @@
             <div class="menu">
                 <a href="index.html">&#127968; Home</a>
                 <a href="cart.html">&#128722; Cart</a>
-                <a href="#contact">&#x260E; Contact</a>
+                <a href="contact.html">&#x260E; Contact</a>
+                <button id="logoutBtn" style="display: none;" onclick="logout()">Logout</button>
+                <a href="index.html" id="user-info"></a>
+                <a id="loginLink" href="login.html">Login</a>
             </div>
         </div>
     </header>
@@ -33,9 +36,14 @@
 
     <button id="buynow" onclick="buynow()">Buy Now</button>
 
+    <!-- Include Firebase scripts here -->
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth-compat.js"></script>
+
+    <!-- Your custom script -->
     <script src="cart.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

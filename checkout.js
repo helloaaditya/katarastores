@@ -17,35 +17,44 @@ document.addEventListener('DOMContentLoaded', function () {
     const checkoutForm = document.getElementById('checkout-form');
 
     function fetchCartItems() {
-        // Fetch items from "cart" collection
-        db.collection('cart').get().then((querySnapshot) => {
-            let totalPrice = 0;
-
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                const cartItemDiv = document.createElement('div');
-                cartItemDiv.classList.add('cart-item');
-
-                cartItemDiv.innerHTML = `
-                    <img src="${data.productImage}" alt="${data.productName}">
-                    <p>${data.productName}</p>
-                    ${data.quantity ? `<p>Quantity: ${data.quantity}</p>` : ''}
-                    ${data.totalAmount ? `<p>Total Amount: $${data.totalAmount.toFixed(2)}</p>` : ''}
-                    ${data.unitPrice ? `<p>Unit Price: $${data.unitPrice.toFixed(2)}</p>` : ''}
-                `;
-
-                cartItemsContainer.appendChild(cartItemDiv);
-
-                // Calculate the total price for each product
-                totalPrice += data.quantity * data.unitPrice;
+        // Get the currently logged-in user
+        const user = firebase.auth().currentUser;
+    
+        if (user) {
+            // Fetch items from "cart" collection matching user's email
+            db.collection('cart').where('userEmail', '==', user.email).get().then((querySnapshot) => {
+                let totalPrice = 0;
+    
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const cartItemDiv = document.createElement('div');
+                    cartItemDiv.classList.add('cart-item');
+    
+                    cartItemDiv.innerHTML = `
+                        <img src="${data.productImage}" alt="${data.productName}">
+                        <p>${data.productName}</p>
+                        ${data.quantity ? `<p>Quantity: ${data.quantity}</p>` : ''}
+                        ${data.totalAmount ? `<p>Total Amount: $${data.totalAmount.toFixed(2)}</p>` : ''}
+                        ${data.unitPrice ? `<p>Unit Price: $${data.unitPrice.toFixed(2)}</p>` : ''}
+                    `;
+    
+                    cartItemsContainer.appendChild(cartItemDiv);
+    
+                    // Calculate the total price for each product
+                    totalPrice += data.quantity * data.unitPrice;
+                });
+    
+                // Display the total price on the page
+                totalPriceContainer.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+            }).catch((error) => {
+                console.error('Error fetching cart items:', error);
             });
-
-            // Display the total price on the page
-            totalPriceContainer.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
-        }).catch((error) => {
-            console.error('Error fetching cart items:', error);
-        });
+        } else {
+            // Handle the case when the user is not logged in
+            console.log('User is not logged in.');
+        }
     }
+    
 
     // Function to store billing details in Firestore
     function storeBillingDetails(name, email, address, city, state, country, zip, phone) {

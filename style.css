@@ -52,11 +52,58 @@ header {
     color: #000000;
     font-size: 18px;
     text-decoration: none;
-    margin: 0 55px;
+    margin: 0 20px;
 }
 
 .menu a:hover {
     color: #ed8208;
+}
+
+#user-info{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin-top: 0.1rem;
+    float:right;
+    text-decoration: none;
+}
+
+#user-info:hover{
+    color: #fa7603;
+    transition: 0.5s;
+}
+
+#logoutBtn{
+    font-family: sans-serif;
+    font-size: 20px;
+    float:right;
+    margin-top: -0.5rem;
+    text-decoration: none;
+    background-color:transparent;
+    color: #000;
+    border: solid 1px;
+    padding: 10px;
+}
+
+#logoutBtn:hover{
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+
+#loginLink{
+    font-family: sans-serif;
+    font-size: 20px;
+    float:right;
+    margin-top: -0.5rem;
+    text-decoration: none;
+    background-color:transparent;
+    color: #000;
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 5px;
+
 }
 
 
