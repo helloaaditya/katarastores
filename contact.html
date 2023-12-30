@@ -48,6 +48,41 @@
             </form>
         </div>
     </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Construct the data object
+            const data = {
+                Name: name,
+                Email: email,
+                Message: message
+            };
+            // Make a POST request to the Sheet's API endpoint
+            fetch('https://sheet.best/api/sheets/ec69e940-2458-4a4a-9c4f-3464f781e3f9', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Data sent successfully:', result);
+                    // You can add further actions here if needed
+                    alert('Message sent successfully!');
+                })
+                .catch(error => {
+                    console.error('Error sending data:', error);
+                    alert('An error occurred while sending the message. Please try again later.');
+                });
+        });
+    </script>
     <Script src="index.js"></SCript>
     <script src="cart.js"></script>
 </body>
