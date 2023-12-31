@@ -699,8 +699,7 @@ footer {
 
     .navigation-manual {
         position: absolute;
-        bottom: 20px;
-        top: 37%;
+        top: 38%;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
