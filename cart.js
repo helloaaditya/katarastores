@@ -25,49 +25,46 @@ function fetchCartItems() {
     console.log(user);
 
     if (user) {
-        // Fetch items from "cart" collection matching user's email
-        db.collection('cart').where('userEmail', '==', user.email).get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
+        // Fetch items from all cart collections
+        Promise.all([
+            db.collection('cart').where('userEmail', '==', user.email).get(),
+            db.collection('normalcart').where('userEmail', '==', user.email).get()
+            // Add other cart collections here if needed
+        ])
+        .then((snapshots) => {
+            snapshots.forEach((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const quantity = data.quantity || 1;
+                    const unitPrice = data.unitPrice || 0;
+                    const productTotalPrice = quantity * unitPrice;
+                    totalPrice += productTotalPrice;
 
-                // Ensure quantity and unitPrice are defined before calculations
-                const quantity = data.quantity || 1;
-                const unitPrice = data.unitPrice || 0; 
-
-                // Calculate the total price for each product
-                const productTotalPrice = quantity * unitPrice;
-                totalPrice += productTotalPrice;
-
-                // Create a div for each cart item
-                const cartItemDiv = document.createElement('div');
-                cartItemDiv.classList.add('cart-item');
-
-                // Add product details to the cart item div
-                cartItemDiv.innerHTML = `
-                    <img src="${data.productImage}" alt="${data.productName}">
-                    <p>${data.productName}</p>
-                    ${data.quantity ? `<p>Quantity: ${data.quantity}</p>` : ''}
-                    ${data.totalAmount ? `<p>Total Amount: ₹${data.totalAmount.toFixed(2)}</p>` : ''}
-                    <button class="delete-button" onclick="deleteItem('${doc.id}')">Delete</button>
-                `;
-
-                // Append the cart item div to the container
-                cartItemsContainer.appendChild(cartItemDiv);
+                    // Create and append cart item div
+                    const cartItemDiv = document.createElement('div');
+                    cartItemDiv.classList.add('cart-item');
+                    cartItemDiv.innerHTML = `
+                        <img src="${data.productImage}" alt="${data.productName}">
+                        <p>${data.productName}</p>
+                        ${data.quantity ? `<p>Quantity: ${data.quantity}</p>` : ''}
+                        ${data.totalAmount ? `<p>Total Amount: ₹${data.totalAmount.toFixed(2)}</p>` : ''}
+                        <button class="delete-button" onclick="deleteItem('${doc.id}', '${querySnapshot.metadata.isFromCache ? 'normalcart' : 'cart'}')">Delete</button>
+                    `;
+                    cartItemsContainer.appendChild(cartItemDiv);
+                });
             });
 
-            // Display the total price on the page after iterating through all items
+            // Display the total price
             totalPriceContainer.textContent = `Total Price: ₹${totalPrice.toFixed(2)}`;
         }).catch((error) => {
             console.error('Error fetching cart items:', error);
         });
     } else {
-        // User is not logged in, you can handle this case (e.g., redirect to login)
+        // User is not logged in
         console.log('User is not logged in.');
     }
 }
 
-// Function to delete an item from the cart
 function deleteItem(cartItemId) {
     // Remove the item from the "cart" collection in Firestore
     db.collection('cart').doc(cartItemId).delete().then(() => {
@@ -80,6 +77,8 @@ function deleteItem(cartItemId) {
         console.error('Error deleting document:', error);
     });
 }
+// Function to delete an item from the cart
+
 
 // Initial display of the cart
 fetchCartItems();
