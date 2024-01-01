@@ -100,10 +100,11 @@ function decrementQuantity() {
 function updateQuantityAndTotal() {
     document.getElementById('fquantity').innerText = quantity;
     const priceString = document.querySelector('.fproduct-price h3').innerText;
-    const unitPrice = parseFloat(priceString.replace('$', ''));
+    const unitPrice = parseFloat(priceString.replace('₹', '')); // Change '$' to '₹'
     const totalAmount = quantity * unitPrice;
-    document.getElementById('ftotal-amount').innerText = `$${totalAmount.toFixed(2)}`;
+    document.getElementById('ftotal-amount').innerText = `₹${totalAmount.toFixed(2)}`;
 }
+
 
 function addToCart() {
     try {
@@ -118,8 +119,7 @@ function addToCart() {
             const productImage = document.querySelector('.fproduct-image img').src;
 
             // Convert product price to a number
-            const unitPrice = parseFloat(productPriceString.replace('$', ''));
-
+            const unitPrice = parseFloat(productPriceString.replace('₹', '')); // Change '$' to '₹'
             // Get quantity and calculate total amount
             const totalAmount = quantity * unitPrice;
 
@@ -135,7 +135,7 @@ function addToCart() {
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
             .then(function(docRef) {
-                alert(`Successfully added to the Cart.`);
+                alert(`Successfully added ${productName} to the Cart.`);
             })
             .catch((error) => {
                 console.error('Error adding product to the Cart:', error);
@@ -152,42 +152,36 @@ function addToCart() {
     }
 }
 
-function addToCartNormal() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const totalPriceContainer = document.getElementById('total-price');
-
-    let totalPrice = 0;
-
+function addToCartNormal(buttonElement) {
     const user = firebase.auth().currentUser;
 
     if (user) {
-        db.collection('cart').where('userEmail', '==', user.email).get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
+        // Find the product container
+        const productContainer = buttonElement.closest('.product');
 
-                const quantity = data.quantity || 1;
-                const unitPrice = data.unitPrice || 0; 
+        // Extract product details
+        const productName = productContainer.querySelector('.product-name a').textContent;
+        const productPriceString = productContainer.querySelector('.product-price h3').textContent;
+        const productImageSrc = productContainer.querySelector('.product-image img').src;
 
-                const productTotalPrice = quantity * unitPrice;
-                totalPrice += productTotalPrice;
+        // Convert product price to a number
+        const unitPrice = parseFloat(productPriceString.replace('₹', ''));
 
-                const cartItemDiv = document.createElement('div');
-                cartItemDiv.classList.add('cart-item');
+        // Define quantity (assuming 1 for this example)
+        const quantity = 1;
 
-                cartItemDiv.innerHTML = `
-                    <img src="${data.productImage}" alt="${data.productName}">
-                    <p>${data.productName}</p>
-                    ${data.quantity ? `<p>Quantity: ${data.quantity}</p>` : ''}
-                    ${data.totalAmount ? `<p>Total Amount: $${data.totalAmount.toFixed(2)}</p>` : ''}
-                    <button class="delete-button" onclick="deleteItem('${doc.id}')">Delete</button>
-                `;
-
-                cartItemsContainer.appendChild(cartItemDiv);
-            });
-
-            totalPriceContainer.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
-        }).then(function(docRef) {
-            alert(`Successfully added to the Cart.`);
+        // Add product details to Firestore
+        db.collection("cart").add({
+            userEmail: user.email,
+            productName: productName,
+            productImage: productImageSrc,
+            quantity: quantity,
+            unitPrice: unitPrice,
+            totalAmount: quantity * unitPrice, // Total price for the product
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function(docRef) {
+            alert(`Successfully added ${productName} to the Cart.`);
         })
         .catch((error) => {
             console.error('Error adding product to the Cart:', error);
@@ -199,6 +193,3 @@ function addToCartNormal() {
         window.location.href = 'login.html';
     }
 }
-
-
-

@@ -26,7 +26,8 @@ function fetchCartItems() {
 
     if (user) {
         // Fetch items from "cart" collection matching user's email
-        db.collection('cart').where('userEmail', '==', user.email).get().then((querySnapshot) => {
+        db.collection('cart').where('userEmail', '==', user.email).get()
+        .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
 
@@ -47,7 +48,7 @@ function fetchCartItems() {
                     <img src="${data.productImage}" alt="${data.productName}">
                     <p>${data.productName}</p>
                     ${data.quantity ? `<p>Quantity: ${data.quantity}</p>` : ''}
-                    ${data.totalAmount ? `<p>Total Amount: $${data.totalAmount.toFixed(2)}</p>` : ''}
+                    ${data.totalAmount ? `<p>Total Amount: ₹${data.totalAmount.toFixed(2)}</p>` : ''}
                     <button class="delete-button" onclick="deleteItem('${doc.id}')">Delete</button>
                 `;
 
@@ -56,7 +57,7 @@ function fetchCartItems() {
             });
 
             // Display the total price on the page after iterating through all items
-            totalPriceContainer.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+            totalPriceContainer.textContent = `Total Price: ₹${totalPrice.toFixed(2)}`;
         }).catch((error) => {
             console.error('Error fetching cart items:', error);
         });
@@ -70,7 +71,9 @@ function fetchCartItems() {
 function deleteItem(cartItemId) {
     // Remove the item from the "cart" collection in Firestore
     db.collection('cart').doc(cartItemId).delete().then(() => {
-        console.log('Document successfully deleted!');
+        alert('Document successfully deleted!');
+        // refresh page 
+        location.reload();
         // Fetch and display updated cart items
         fetchCartItems();
     }).catch((error) => {
