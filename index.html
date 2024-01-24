@@ -1,350 +1,44 @@
+<!-- under maintanace page  -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KatraStore | Home</title>
-    <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/katarastores-78cad.appspot.com/o/logo.png?alt=media&token=cd52e6dd-9412-4f72-a7a0-543ad41796f6" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore-compat.js"></script>
-    <meta name="keywords"
-        content="KataraStores, Katara, Stores, Katara Stores, KataraStores.com, KataraStores.in, KataraStores.co.in,KataraStores.co, KataraStores.co.uk, KataraStores.co.us, KataraStores.co.au, KataraStores.co.ca, KataraStores.co.nz, KataraStores.co.za, KataraStores.co.jp, KataraStores.co.kr, KataraStores.co.fr, KataraStores.co.de, KataraStores.co.it, KataraStores.co.es, KataraStores.co.nl, KataraStores.co.se, KataraStores.co.pl, KataraStores">
-    <meta name="description"
-        content="KataraStores is an online shopping platform that offers a wide range of products from electronics, books, clothes, accessories to anything you can think of. We offer a wide range of products from electronics, books, clothes, accessories to anything you can think of.">
-    <meta name="author" content="KataraStores">
-    <meta property="og:image" content="img/KataraStores.png">
-    <meta property="og:title" content="KataraStores">
-    <meta property="og:description"
-        content="KataraStores is an online shopping platform that offers a wide range of products from electronics, books, clothes, accessories to anything you can think of. We offer a wide range of products from electronics, books, clothes, accessories to anything you can think of.">
-    <meta property="og:url" content="https://katarastores.in">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="KataraStores">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="en_GB">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="3 days">
-    <meta name="distribution" content="global">
-    <meta name="rating" content="general">
-    <meta name="theme-color" content="#3374F3">
-    <meta property="og:title" content="KataraStores">
-    <meta property="og:description"
-        content="KataraStores is an online shopping platform that offers a wide range of products from electronics, books, clothes, accessories to anything you can think of. We offer a wide range of products from electronics, books, clothes, accessories to anything you can think of.">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="854">
-    <meta property="og:url" content="https://katarastores.in">
+    <title>Under Maintanace</title>
 </head>
-
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <h2 class="logo-text">Katara<span>Stores</span></h2>
-            </div>
-            <div class="menu">
-                <a href="index.html">&#127968; Home</a>
-                <a href="cart.html">&#128722; Cart</a>
-                <a href="contact.html">&#x260E; Contact</a>
-                <button id="logoutBtn" style="display: none;" onclick="logout()">Logout</button>
-                <a href="index.html" id="user-info"></a>
-                <a id="loginLink" href="login.html">Login</a>
-            </div>
-        </div>
-    </header>
-
-
-    <div class="slider">
-        <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <div class="slide first">
-                <img src="img/2.png" alt="">
-            </div>
-            <div class="slide">
-                <img src="img/1.png" alt="">
-            </div>
-            <div class="slide">
-                <img src="img/edited.png" alt="">
-            </div>
-        </div>
+    <style>
+        body {
+            text-align: center;
+            padding: 150px;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        body {
+            font: 20px Helvetica, sans-serif;
+            color: #333;
+        }
+        article {
+            display: block;
+            text-align: left;
+            width: 650px;
+            margin: 0 auto;
+        }
+        a {
+            color: #dc8100;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+    <div class="container">
+        <div class="content">
+            <h1>Under Maintanace</h1>
+            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+            <p>&mdash; The Team</p>
+        </div>  
     </div>
-    <div class="navigation-manual">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-    </div>
-
-    <section class="products">
-        <div class="container">
-            <div class="section-heading">
-                <h3>Our Products</h3>
-                <hr>
-            </div>
-            <div class="products-container">
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/Screenshot 2023-12-29 045446.png" alt="">
-                    </div>
-                    <div class="product-name">
-                        <a href="#">P9 Wireless Bluetooth Headphones With Mic Noise Cancelling Headsets Stereo Sound
-                            Earphones Sports Gaming Headphones Supports</a>
-                    </div>
-                    <div class="product-price">
-                        <h3>₹699.00</h3>
-                    </div>
-                    <div class="add-to-cart">
-                        <button type="button" onclick="addToCartNormal(this)">Add to Cart</button>                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/watch.png" alt="">
-                    </div>
-                    <div class="product-name">
-                        <a href="#">Jeep Altra Smartwatch (orange Strap, m)</a>
-                    </div>
-                    <div class="product-price">
-                        <h3>₹429.00</h3>
-                    </div>
-                    <div class="add-to-cart">
-                        <button type="button" onclick="addToCartNormal(this)">Add to Cart</button>                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/black smart.jpg" alt="">
-                    </div>
-                    <div class="product-name">
-                        <a href="#">T800 8 Altra Smartwatch (orange Strap, m)</a>
-                    </div>
-                    <div class="product-price">
-                        <h3>₹429.00</h3>
-                    </div>
-                    <div class="add-to-cart">
-                        <button type="button" onclick="addToCartNormal(this)">Add to Cart</button>                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/Screenshot 2023-12-29 050221.png" alt="">
-                    </div>
-                    <div class="product-name">
-                        <a href="#">TWS Pro6 Earphone Bluetooth Headphones with Mic 9D Stereo Pro 6 Earbuds for Xiaomi
-                            Samsung Android Wireless Bluetooth Headset</a>
-                    </div>
-                    <div class="product-price">
-                        <h3>₹399.00</h3>
-                    </div>
-                    <div class="add-to-cart">
-                        <button type="button" onclick="addToCartNormal(this)">Add to Cart</button>                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/ultra pre.jpg" alt="">
-                    </div>
-                    <div class="product-name">
-                        <a href="#">Ultra Premium T800 8 Altra Smartwatch</a>
-                    </div>
-                    <div class="product-price">
-                        <h3>₹419.00</h3>
-                    </div>
-                    <div class="add-to-cart">
-                        <button type="button" onclick="addToCartNormal(this)">Add to Cart</button>                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-image">
-                        <img src="img/TWS.jpg" alt="">
-                    </div>
-                    <div class="product-name">
-                        <a href="#">i12 Earbuds Your Ultimate Audi Companion</a>
-                    </div>
-                    <div class="product-price">
-                        <h3>₹399.00</h3>
-                    </div>
-                    <div class="add-to-cart">
-                        <button type="button" onclick="addToCartNormal(this)">Add to Cart</button>                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- featured products section -->
-
-    <section class="featured-products">
-        <div class="fcontainer">
-            <div class="fsection-heading">
-                <h3>Featured Products</h3>
-                <hr>
-            </div>
-            <div class="fproducts-container">
-                <div class="fproduct">
-                    <div class="fproduct-image">
-                        <img src="img/Screenshot 2023-12-29 045446.png" alt="">
-                    </div>
-                    <div class="fproduct-info">
-                        <div class="fproduct-name">
-                            <a href="#">P9 Wireless Bluetooth</a>
-                            <p>P9 Wireless Bluetooth Headphones With Mic Noise Cancelling Headsets Stereo Sound
-                                Earphones Sports Gaming Headphones Supports TF <br><br>
-                                · Free shipping on first order <br>
-                                · Fast delivery 11-day delivery by Jan 16 <br>
-                                · Free returns within 15 days, no questions asked</p>
-                        </div>
-                        <div class="fproduct-price">
-                            <h3>₹699.00</h3>
-                        </div>
-                        <div class="fquantity">
-                            <button class="fdecrement" onclick="decrementQuantity()">-</button>
-                            <span id="fquantity">1</span>
-                            <button class="fincrement" onclick="incrementQuantity()">+</button>
-                        </div>
-                        <div class="fproduct-price">
-                            <h4>Total : &nbsp;
-                                <div id="ftotal-amount">₹699.00</div>
-                            </h4>
-                        </div>
-                        <div class="fadd-to-cart">
-                            <button type="button" onclick="addToCart()">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- contact  -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-heading">
-                <h3>Contact Us</h3>
-                <hr>
-            </div>
-            <form id="contactForm">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <label for="message">Message</label>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"
-                    required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Construct the data object
-            const data = {
-                Name: name,
-                Email: email,
-                Message: message
-            };
-
-            // Make a POST request to the Sheet's API endpoint
-            fetch('https://sheet.best/api/sheets/ec69e940-2458-4a4a-9c4f-3464f781e3f9', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => response.json())
-                .then(result => {
-                    console.log('Data sent successfully:', result);
-                    // You can add further actions here if needed
-                    alert('Message sent successfully!');
-                })
-                .catch(error => {
-                    console.error('Error sending data:', error);
-                    alert('An error occurred while sending the message. Please try again later.');
-                });
-        });
-    </script>
-
-    <!-- footer  -->
-    <hr>
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h2 class="logo-text">Katara<span>Stores</span></h2>
-                    <p>
-                        KataraStores is an online shopping platform that offers a wide range of products from
-                        electronics, books, clothes, accessories to anything you can think of. We offer a wide range of
-                        products from electronics, books, clothes, accessories to anything you can think of.
-                    </p>
-                    <div class="contact2">
-                        <span>&#x260E; &nbsp; +91 8797223004</span>
-                        <span>&nbsp; &#x2709; &nbsp; katarastores@gmail</span>
-                    </div>
-                    <div class="socials">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram "></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube "></i></a>
-                    </div>
-                </div>
-                <div class="footer-section links">
-                    <h2>Quick Links</h2>
-                    <br>
-                    <ul>
-                        <a href="#">
-                            <li>Team</li>
-                        </a>
-                        <a href="#">
-                            <li>Gallery</li>
-                        </a>
-                        <a href="#">
-                            <li>Terms and Conditions</li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="footer-section contact-form">
-                    <h2>Contact Us</h2>
-                    <br>
-                    <form action="index.html" method="post">
-                        <input type="email" name="email" class="text-input contact-input"
-                            placeholder="Your email address...">
-                        <textarea rows="4" name="message" class="text-input contact-input"
-                            placeholder="Your message..."></textarea>
-                        <button type="submit" class="btn btn-big contact-btn">
-                            <i class="fas fa-envelope"></i>
-                            Send
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; Designed by KataraStores
-            </div>
-        </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/8c5b94d33d.js" crossorigin="anonymous"></script>
-
-    <script src="index.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCdtn8SUGu-zf8cvjBmuuWt_2CI65DEgpQ",
-            authDomain: "katarastores-78cad.firebaseapp.com",
-            projectId: "katarastores-78cad",
-            storageBucket: "katarastores-78cad.appspot.com",
-            messagingSenderId: "608050390043",
-            appId: "1:608050390043:web:4c789c9c77cbf66ad644be",
-            measurementId: "G-WPGL7WB382"
-        };
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 </body>
-
 </html>
